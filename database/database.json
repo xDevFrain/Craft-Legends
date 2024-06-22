@@ -1,0 +1,13 @@
+{
+  "gooddb": {},
+  "channels": {
+    "1138798338792243241_radioChannel": {
+      "channelId": "1138800152447033504",
+      "guildId": "1138798338792243241",
+      "url": "https://Qurango.net/radio/maher_al_meaqli",
+      "enabled": false,
+      "ch": "1138800197628088380",
+      "msgId": "1253870799031500860"
+    }
+  }
+}
