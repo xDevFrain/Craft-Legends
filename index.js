@@ -4,6 +4,7 @@ require("events").EventEmitter.setMaxListeners(999999999)
 
 const { GatewayIntentBits, Partials } = require("discord.js");
 const Quran = require("@DevXor/DevXor");
+const keep_alive = require('./keep_alive.js')
 
 let client = new Quran({
   token: process.env.token,
