@@ -24,16 +24,17 @@ module.exports = {
     setTimeout(() => client.user.setStatus("online"), 40000);
     setInterval(() => {
       let ServersStatus = client.Radio.size
-      client.user.setActivity({ name: `in 1 Server`, type: ActivityType.Listening })
+      client.user.setActivity({ name: `in ${ServersStatus} Server`, type: ActivityType.Listening })
     }, 1 * 1000 * 60);
 
     let RadioChannels = await client.db.table("channels").values() || [];
     if (RadioChannels.length === 0) return
     setTimeout(async () => {
+      const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
       for (let data of RadioChannels) {
         if (data.enabled) {
-
+           await sleep(3000)
           let guild = await client.guilds.fetch(data.guildId)
           if (!guild) continue
           let conn = await joinAndPlayQuran(client, data.channelId, guild, data.url)
